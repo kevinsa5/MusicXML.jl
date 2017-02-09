@@ -61,7 +61,7 @@ function parseMXMLTree(root::XMLElement)
               p = Pitch(step, octave, alter)
               duration = parse(content(find_element(c3, "duration")))
               voice = parse(content(find_element(c3, "voice")))
-              notetype = quarter #eval(parse(content(find_element(c3, "type"))))
+              notetype = eval(parse(content(find_element(c3, "type"))))
 
               push!(notes, Note(p, duration, voice, notetype, isrest))
             end
